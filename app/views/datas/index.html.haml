@@ -1,0 +1,22 @@
+.container
+  .row
+    = form_tag datas_search_url, remote: true, id: 'search_form' do
+      .col-md-8.col-md-offset-2
+        .input-group.col-md-12#custom-search-input
+          = text_field_tag :phrase, '', placeholder: 'Search', class: 'form-control input-lg'
+          %span.input-group-btn
+            = button_tag type: 'submit', class: 'btn btn-info btn-lg' do
+              %i.glyphicon.glyphicon-search
+
+  %h2.col-md-4.col-md-offset-4.collapse#no_results
+    No results Found
+
+  %table.table.collapse#results
+    %thead
+      %tr
+        %th #
+        %th Name
+        %th Type
+        %th Designed by
+        %th Weight
+    %tbody#table_cells

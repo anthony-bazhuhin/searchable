@@ -2,6 +2,8 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path("../../config/environment", __FILE__)
 require "rails/test_help"
 require "minitest/rails"
+require 'minitest/reporters'
+
 
 # To add Capybara feature tests add `gem "minitest-rails-capybara"`
 # to the test group in the Gemfile and uncomment the following:
@@ -10,7 +12,8 @@ require "minitest/rails"
 # Uncomment for awesome colorful output
 # require "minitest/pride"
 
-Dir[Rails.root.join('lib/**/*.rb')].each { |f| require f }
+reporter_options = { color: true }
+Minitest::Reporters.use! [Minitest::Reporters::DefaultReporter.new(reporter_options)]
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.

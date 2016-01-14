@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'search_processor'
 
 class SearchProcessorTest < ActiveSupport::TestCase
 

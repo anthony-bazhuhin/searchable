@@ -3,5 +3,6 @@ class DatasController < ApplicationController
   end
 
   def search
+    render json: DataScope.filter(params[:phrase]).to_json
   end
 end
